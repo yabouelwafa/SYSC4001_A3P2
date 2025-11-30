@@ -3,6 +3,28 @@
 #include <unistd.h>    
 #include <sys/wait.h> 
 
+struct Rubric {
+    int q_num;
+    char rubric_char;
+};
+
+struct ExamState {
+    int student_num;
+    bool is_completed[5];
+};
+
+struct Ctrl {
+    int current_exam;
+    bool stop;
+};
+
+struct SharedData {
+    Rubric rubric[5];
+    ExamState exam;
+    Ctrl ctl;
+};
+
+
 int main(int argc, char* argv[]) {
 
     int num_TAs = atoi(argv[1]);
