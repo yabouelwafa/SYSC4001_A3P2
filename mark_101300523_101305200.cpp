@@ -291,11 +291,6 @@ int main(int argc, char* argv[]) {
         wait(NULL);
     }
 
-
-
-    
-
-
     if (sem_destroy(&shared_data->sem_rubric) == -1) {
         perror("sem_destroy sem_rubric failed");
     }
